@@ -36,3 +36,20 @@ node_modules/
 
 # Fichier de secrets Django
 *.env
+
+# Dossiers de distribution de Bootstrap
+/bootstrap-*/dist/
+
+# Fichiers de map et de minification qui peuvent être générés
+*.map
+*.min.css
+*.min.js
+
+# Dossiers et fichiers de documentation Bootstrap (si vous les téléchargez ou les générez)
+/docs/
+*.md
+
+# Fichiers de configuration de construction spécifiques à Bootstrap
+gruntfile.js
+package.json
+package-lock.json
