@@ -1,4 +1,5 @@
-from django.shortcuts import HttpResponse, render
+from django.contrib import messages
+from django.shortcuts import HttpResponse, redirect, render
 from django.views import View
 
 from .form import ProduitForm
@@ -45,8 +46,10 @@ class CreateProduct(View):
         
         if form.is_valid():
             form.save()
-            return HttpResponse('Produit enregistré avec succès')
+            messages.success(request, 'Produit enregistré avec succès')
+            return redirect('produits:index')
         else : 
+            messages.error(request, 'Erreur lors de l\'enregistrement du produit')
             return render(request, 'produits/create_product.html', {'form': form})
         
     
